@@ -20,7 +20,14 @@ function changeFavicon() {
 
 function changeColor() {
     document.body.classList.remove("color-" + window.color);
-    window.color = getRandomInt(5);
+    if (window.color) {
+        // Tire parmi les 4 autres couleurs pour ne jamais retomber sur la même
+        let next = getRandomInt(4);
+        if (next >= window.color) next++;
+        window.color = next;
+    } else {
+        window.color = getRandomInt(5);
+    }
     document.body.classList.add("color-" + window.color);
     changeFavicon();
 }
@@ -29,5 +36,6 @@ changeColor();
 
 let links = document.querySelectorAll("a");
 links.forEach(link => {
+  link.addEventListener('focus', () => changeColor());
   link.addEventListener('mouseover', () => changeColor());
 });

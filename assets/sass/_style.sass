@@ -39,6 +39,19 @@ body.color-4
 body.color-5
     background: $color-5
 
+a
+    font-style: italic
+    &[target="_blank"]:not(.icon)
+        font-style: italic
+        text-decoration-line: none
+        &::after
+            content: "\2197"
+            font-family: inherit
+            font-style: normal
+            font-size: pxToRem(24)
+        &:hover
+            text-decoration-line: underline
+    
 // Effet risographie : grain d'encre discret par-dessus le fond
 body::after
     content: ""
