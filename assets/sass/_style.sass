@@ -1,8 +1,17 @@
-#document-header,
-.hero,
-.footer-logo
-    display: none
+.footer-logo,
+.toc-cta,
+.hero
+    display: none !important
 
+header#document-header
+    .primary-menu
+        padding-top: pxToRem(64)
+.page__home
+    #document-header
+        display: none
+body:not(.page__home)
+    #main
+        margin-top: space(40)
 .blocks
     @include in-page-without-sidebar
         .block-chapter
