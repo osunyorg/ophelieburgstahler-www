@@ -1,0 +1,19 @@
+#document-header,
+.hero,
+.footer-logo
+    display: none
+
+.blocks
+    @include in-page-without-sidebar
+        .block-chapter
+            .chapter
+                .text
+                    width: 100%
+
+#document-footer
+    @include media-breakpoint-up(desktop)
+        .footer-legals
+            ul, li, p
+                display: inline
+        .footer-credit
+            margin-left: $spacing-3
