@@ -15,11 +15,7 @@ function getFavicon() {
 }
 
 function changeFavicon() {
-    const color = getComputedStyle(document.body).backgroundColor,
-          svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>" +
-                "<circle cx='16' cy='16' r='15' fill='" + color + "'/>" +
-                "</svg>";
-    getFavicon().href = "data:image/svg+xml," + encodeURIComponent(svg);
+    getFavicon().href = "/assets/images/favicons/color-" + window.color + ".svg";
 }
 
 function changeColor() {
