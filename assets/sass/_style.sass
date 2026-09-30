@@ -6,13 +6,20 @@
 
 header#document-header
     .primary-menu
-        padding-top: pxToRem(64)
+        @include media-breakpoint-down(desktop)
+            padding-top: pxToRem(15)
+        @include media-breakpoint-up(desktop)
+            padding-top: pxToRem(64)
+
 .page__home
     #document-header
         display: none
 body:not(.page__home)
     #main
-        margin-top: pxToRem(185)
+        @include media-breakpoint-down(desktop)
+            margin-top: pxToRem(126)
+        @include media-breakpoint-up(desktop)
+            margin-top: pxToRem(185)
 .blocks
     @include in-page-without-sidebar
         .block-chapter
@@ -51,6 +58,8 @@ a
             font-family: inherit
             font-style: normal
             font-size: pxToRem(24)
+            @include media-breakpoint-down(desktop)
+                font-size: pxToRem(14)
         &:hover
             text-decoration-line: underline
     
@@ -58,7 +67,7 @@ a
 body::after
     content: ""
     position: fixed
-    inset: 0
+    inset: -200px
     z-index: 9999
     pointer-events: none
     background-image: url("/assets/images/grain.svg")
