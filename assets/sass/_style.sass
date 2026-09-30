@@ -65,12 +65,13 @@ a
     
 // Effet risographie : grain d'encre discret par-dessus le fond
 body::after
-    content: ""
-    position: fixed
-    inset: -200px
-    z-index: 9999
-    pointer-events: none
-    background-image: url("/assets/images/grain.svg")
-    background-size: 240px 240px
-    mix-blend-mode: multiply
-    opacity: 0.18
+    @include media-breakpoint-up(desktop)
+        content: ""
+        position: fixed
+        inset: 0
+        z-index: 9999
+        pointer-events: none
+        background-image: url("/assets/images/grain.svg")
+        background-size: 240px 240px
+        mix-blend-mode: multiply
+        opacity: 0.18
